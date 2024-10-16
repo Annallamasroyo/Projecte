@@ -17,7 +17,7 @@ class RfidReader:
 			
 	def read_uid(self):
 		print("Esperant a lleguir targeta...")
-		uid = self.pn532.read_passive_target(0)
+		uid = self.pn532.read_passive_target(timeout=0)
 		if uid is not None:
 			return binascii.hexlify(uid).decode("utf-8").upper()
 			
